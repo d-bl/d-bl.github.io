@@ -1,11 +1,11 @@
 ### TOC
 
-* [Use cases](/#use-cases)
+* [overview](http://github.com/d-bl)
 * [Site map](/#site-map)
 * [Contact](/#contact)
-* [Glossary](/#glossary)
-* [History](/#history-of-d-bl-and-groundforge)
+* [Glossary](glossary)
+* [History](history)
 
 ### Contribute
 
-* [propose changes]({{%20site.github.repository_url%20}}/edit/master/docs/{{%20page.path%20}} "typo's, grammar, whatever") to this page.
+* [propose changes]({{site.github.repository_url}}/edit/master/docs/{{page.path}} "typo's, grammar, whatever") to this page.
