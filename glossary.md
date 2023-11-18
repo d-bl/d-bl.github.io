@@ -1,7 +1,7 @@
 Glossary
 ========
 
-See also [icons](GroundForge/icons)
+See also [icons](GroundForge-help/Icons)
 
 **D-BL**
 

@@ -7,9 +7,10 @@ header h1 small { font-size: 47%}
         background-color: #3679cd
     }
 }
-@media only screen and (min-width: 768px) and (max-width: 959px)
-header h1, header h2 {
-  width: 490px; /* same width for header lines as for content */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    header h1, header h2 {
+        width: 490px; /* same width for header lines as for content */
+    }
 }
 header a{color: #fff}
 header a:hover {color: #9ddcff}

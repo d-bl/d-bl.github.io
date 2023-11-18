@@ -12,7 +12,7 @@ The applications are available with an open source license and the documentation
 Contact
 =======
 
-|                  icon                   | link                                                             | account required                     | purpose / description                                                                                     |
+|                                         | link                                                             | account required                     | purpose / description                                                                                     |
 |:---------------------------------------:|:-----------------------------------------------------------------|:-------------------------------------|:----------------------------------------------------------------------------------------------------------|
 |                                         | [Contact form](https://groundforge.wordpress.com/)               | no                                   | a private message to the support team                                                                     |  
 |         ![](images/octocat.png)         | [Issues](https://github.com/d-bl/GroundForge/issues)             | for notifications and to participate | list of known bugs and desired features                                                                   |
