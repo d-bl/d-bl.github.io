@@ -1,7 +1,7 @@
 
 - [Contact](https://groundforge.wordpress.com/)
-- [History](history)
 - [Glossary](glossary)
+- [History](history)
 - [Old overview](teasers)
 - [Old site map](images/site-map.svg)
 

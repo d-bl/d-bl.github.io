@@ -7,7 +7,7 @@ D-BL offers a roof to a suite of projects and applications related to bobbin lac
 
 * **Grids**
   * Online [polar](https://d-bl.github.io/polar-grids/) grid generator.
-  * printable grids with [Inkscape plugins](https://d-bl.github.io/inkscape-bobbinlace/).
+  * Printable grids with [Inkscape plugins](https://d-bl.github.io/inkscape-bobbinlace/).
   * Links in the [Tesselace](https://d-bl.github.io/tesselace-to-gf/) gallery for downloads in a widely supported scalable [SVG ![](images/external-link.png)](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors#Import) format.
 * **GroundForge** generates thread diagrams from pair diagrams (and vise versa too)
   * Play with stitches in [simple nets](https://d-bl.github.io/GroundForge/nets),
