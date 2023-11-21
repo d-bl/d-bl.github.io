@@ -1,5 +1,6 @@
 
-- [Contact](https://groundforge.wordpress.com/)
+**[Contact](https://groundforge.wordpress.com/)**
+
 - [Glossary](glossary)
 - [History](history)
 - [Old overview](teasers)
