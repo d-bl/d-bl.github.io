@@ -6,7 +6,7 @@ title: a suite of projects and applications
 
 D-BL offers a roof to a suite of projects and applications related to bobbin lace.
 
-* **Grids**  
+* **Grids** 
   ![](images/online-grid.png) &nbsp;
   ![](images/grid-plugins.png)
   * Printable grids with [Inkscape plugins](https://d-bl.github.io/inkscape-bobbinlace/).
