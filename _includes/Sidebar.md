@@ -1,10 +1,14 @@
 
-**[Contact](https://groundforge.wordpress.com/)**
 
 - [Glossary](glossary)
 - [History](history)
 - [Old overview](teasers)
 - [Old site map](images/site-map.svg)
+
+### Contact
+
+* [web form](https://groundforge.wordpress.com/) and more
+* [about us](about-us)
 
 ### Contribute
 
