@@ -2,7 +2,7 @@ header { background: #3679cd url(../images/header-bg-left.png) top right repeat;
 .outer { background: url(../images/header-bg-right.png) top right repeat-y; padding-top: 40px; padding-bottom: 40px; }
 header h1 small { font-size: 47%}
 
-header h1 {width: 690px;font-size: 57px;}
+header h1 {width: 100%; font-size: 57px;}
 @media only screen and (min-width: 768px) {
     header a.button {
         background-color: #3679cd
