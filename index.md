@@ -18,7 +18,7 @@ D-BL offers a roof to a suite of projects and applications related to bobbin lac
 ![](images/thread-to-pairs-tothreads.png?align=right)
   * Play with stitches
     in [simple nets](https://d-bl.github.io/GroundForge/nets),
-    six-pair [snowflakes](https://d-bl.github.io/MAE-gf/docs/counting-snow/#choose-stitches),
+    six-pair [snowflakes](https://d-bl.github.io/MAE-gf/docs/snow-stitches),
     [Valenciennes/Paris](https://d-bl.github.io/gw-lace-to-gf/#a7-h7g11--valenciennes),
     wobbling [Rose ground units](https://d-bl.github.io/MAE-gf/docs/droste#wobble) or
     [snow in Paris](/GroundForge-help/Binche)
