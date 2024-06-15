@@ -16,10 +16,8 @@ Timeline
 * **before 2008**:  
   A [desktop application](https://github.com/d-bl/bobbinwork/wiki)
   with a few more traditional grounds, each predefined with a tedious process and some custom XML.
-  This had a textual tree view of the diagrams, drilling down from spider to stitches to cross/twist.
-  You can try to execute it with
-  <a href="https://adoptopenjdk.net/releases.html?variant=openjdk8"
-  >OpenJDK 8</a>.
+  This has a textual tree view of the diagrams, drilling down from spider to stitches to cross/twist.
+  You can try to execute it with [OpenJDK 8](https://adoptopenjdk.net/releases.html?variant=openjdk8).
 * **2013**: 
   * Discovery of PhD research in progress that lead to [tesselace](https://tesselacedotcom.wordpress.com/)
   * Redesign using SVG, a combination of a [web application](https://jo-pol.github.io/DiBL/grounds/index.html) and inkscape plugins  

@@ -9,7 +9,7 @@ See also [icons](GroundForge-help/Icons)
 
 **Force graphs** 
 
-> An algorithm evenly distributes nodes and links, and organize items so that links are of a similar length. These algorithms balance attraction and repulsive forces. 
+> An algorithm evenly distributes nodes and links, and organizes items so that links are of a similar length. These algorithms balance attraction and repulsive forces. 
 
 **GitHub**
 
