@@ -4,10 +4,11 @@ title: a suite of projects and applications
 ---
 
 
+![](images/grids-gallery.png?align=right)
+
 D-BL offers a roof to a suite of projects and applications related to bobbin lace.
 
 **Grids** 
-  ![](images/grids-gallery.png?align=right)
   * Printable grids with [Inkscape plugins](https://d-bl.github.io/inkscape-bobbinlace/).
   * Online [polar](https://d-bl.github.io/polar-grids/) grid generator.
   * Links in the [Tesselace](https://d-bl.github.io/tesselace-to-gf/) gallery for downloads in a widely supported scalable [SVG ![](images/external-link.png)](https://en.wikipedia.org/wiki/Comparison_of_vector_graphics_editors#Import) format.
