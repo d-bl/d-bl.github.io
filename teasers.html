@@ -7,25 +7,8 @@
         body { max-width: 45em;  padding: 1em; margin-left: auto; margin-right: auto; }
         img { display:block; margin: auto; }
         p { margin: 0.5em; }
-        .hide { display: none; }
-        tr .show { display: table-row; }
-        p .show { display: block; }
         h2 {margin: 0}
     </style>
-    <script>
-        function toggle(el) {
-            var hidden = document.getElementsByClassName("hide");
-            if (hidden.length == 1 ) {
-                location.reload()
-                return
-            }
-            var i;
-            for (i = hidden.length - 1; i>=0; i--) {
-                hidden[i].className = hidden[i].className.replace("hide", "show")
-            }
-            el.className = el.className.replace("show", "hide")
-        }
-    </script>
 </head>
 <body>
 <p>
@@ -66,42 +49,6 @@
             Comes with a collection of predefined patterns. On
             <a href="https://web.archive.org/web/20220517075010/https://tesselace.com/tools/inkscape-extension"
             >tesselace</a> an explanation to "<em>Design Your Own Templates</em>".
-        </p></td>
-    </tr>
-    <tr>
-        <td>
-            <p><a href="#" onclick="toggle(this);return false" class="show">Show predecessors</a></p>
-            <p><a href="#" onclick="toggle(this);return false" class="hide">Hide predecessors</a></p>
-        </td>
-        <td colspan="2">
-            <p>
-                The old generators may still have a use case but they are no longer maintained.
-            </p>
-        </td>
-    </tr>
-    <tr class="hide">
-        <td><img src="images/templates.png"></td>
-        <td><a href="https://jo-pol.github.io/DiBL/grounds/index.html"
-        >interactive web page</a>
-        <td><p>Limited set of stitches. Fixed set of patterns. Thread diagrams only from a table of stitches.
-            The dedicated <a href="https://github.com/d-bl/inkscape-bobbinlace/releases/tag/DiBL-Inkscape-0.7.0"
-            >InkScape plugin</a> to change thread styles is not upgraded to Inkscape 1.0.
-        </p></td>
-    </tr>
-    <tr class="hide">
-        <td><img src="images/bobbinwork.png"></td>
-        <td><a href="https://github.com/d-bl/bobbinwork/wiki">desktop application</a></td>
-        <td><p>Only about a dozen traditional grounds and braids.
-            An export of stitch by stitch images can be imported by third party tools
-            to create an animated image that show a working order. You can try to execute it with
-            <a href="https://adoptopenjdk.net/releases.html?variant=openjdk8"
-            >OpenJDK 8</a>.
-        </p></td>
-    </tr>
-    <tr class="hide">
-        <td><img src="images/just-flanders.png"></td>
-        <td><a href="https://jo-pol.github.io/flanders/">interactive web page</a></td>
-        <td><p>Flanders only. No Pair diagrams. Works even with old browsers.
         </p></td>
     </tr>
     <tr><td><h2>Grids</h2></td><td colspan="2"><h2><a name="polar">Polar</a></h2></td>

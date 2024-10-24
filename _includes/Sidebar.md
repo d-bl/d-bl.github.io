@@ -2,6 +2,7 @@
 
 - [Glossary](glossary)
 - [History](history)
+- [Predecessors](deprecated) web/desktop-apps and Inkscape plugin
 - [Old overview](teasers)
 - [Old site map](images/site-map.svg)
 
