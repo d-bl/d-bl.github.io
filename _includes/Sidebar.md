@@ -1,8 +1,8 @@
 
 
+- [Abandoned](deprecated) apps/plugin
 - [Glossary](glossary)
-- [History](history)
-- [Predecessors](deprecated) web/desktop-apps and Inkscape plugin
+- [History](history)front matter, html->md
 - [Old overview](teasers)
 - [Old site map](images/site-map.svg)
 

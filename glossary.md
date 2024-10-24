@@ -1,3 +1,7 @@
+---
+layout: default
+title: a suite of projects and applications
+---
 Glossary
 ========
 

@@ -37,7 +37,7 @@ Timeline
 * **Mid 2019**:
   * Extended the cheat sheet for longer lines between stitches.
 * **August 2021**:
-  * tutorials for a workshop at IOLI UnConn 2.0 hosted by _the lace museum_
+  * Tutorials for a workshop at IOLI UnConn 2.0 hosted by _the lace museum_
   * birth of the nets page
 * **May 2022**:
   birth of the pdf/print friendly page
@@ -46,4 +46,4 @@ Timeline
 * **mid 2023**:
   Split the main GroundForge page into pattern/stitches/droste
 * **fall 2023**
-  Recipes for snowflakes without the distorting initial geometry
+  Recipes for snowflakes without having to distort initial geometry
