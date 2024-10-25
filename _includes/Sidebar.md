@@ -1,8 +1,8 @@
 
 
-- [Abandoned](deprecated) apps/plugin
+- [Abandoned](abbandoned) apps/plugin
 - [Glossary](glossary)
-- [History](history)front matter, html->md
+- [History](history)
 - [Old overview](teasers)
 - [Old site map](images/site-map.svg)
 
