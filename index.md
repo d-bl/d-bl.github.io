@@ -18,10 +18,10 @@ D-BL offers a roof to a suite of projects and applications related to bobbin lac
 ![](images/thread-to-pairs-tothreads.png?align=right)
   * Play with stitches
     in [simple nets](https://d-bl.github.io/GroundForge/nets),
-    six-pair [snowflakes](https://d-bl.github.io/MAE-gf/docs/snow-stitches),
-    [Valenciennes/Paris](https://d-bl.github.io/gw-lace-to-gf/#a7-h7g11--valenciennes),
-    wobbling [Rose ground units](https://d-bl.github.io/MAE-gf/docs/droste#wobble) or
-    [snow in Paris](/GroundForge-help/Binche)
+    wobbling [Rose ground units](https://d-bl.github.io/MAE-gf/docs/droste#wobble),
+    [Valenciennes/Paris](https://d-bl.github.io/gw-lace-to-gf/#a7-h7g11--valenciennes) or
+    [snow in Paris](/GroundForge-help/Binche),
+  * Mix 4 [snowflakes](https://d-bl.github.io/GroundForge/mix4snow) into new grounds 
   * Browse galleries with predefined patterns (traditional and experimental) and play with your own choice of stitches:
     * [Tesselace](https://d-bl.github.io/tesselace-to-gf/) &mdash; Algorithmically designed lace tessellations linked to GroundForge diagrams.
     * [Sampler](https://d-bl.github.io/gw-lace-to-gf/) by Gertrude Whithing &mdash; Demonstrates the power and limitations.
