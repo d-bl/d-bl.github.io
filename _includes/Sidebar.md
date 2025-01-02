@@ -1,6 +1,6 @@
 
 
-- [Abandoned](abbandoned) apps/plugin
+- [Abandoned](abandoned) apps/plugin
 - [Glossary](glossary)
 - [History](history)
 - [Old overview](teasers)
