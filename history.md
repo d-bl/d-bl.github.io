@@ -12,9 +12,9 @@ Timeline
 --------
 
 * **end of 2001**:  
-  The first release for [flanders](https://jo-pol.github.io/flanders/) thread diagrams
+  * The first release for [flanders](https://jo-pol.github.io/flanders/) thread diagrams
 * **before 2008**:  
-  A [desktop application](https://github.com/d-bl/bobbinwork/wiki)
+  * A [desktop application](https://github.com/d-bl/bobbinwork/wiki)
   with a few more traditional grounds, each predefined with a tedious process and some custom XML.
   This has a textual tree view of the diagrams, drilling down from spider to stitches to cross/twist.
   You can try to execute it with [OpenJDK 8](https://adoptopenjdk.net/releases.html?variant=openjdk8).
@@ -23,8 +23,8 @@ Timeline
   * Redesign using SVG, a combination of a [web application](https://jo-pol.github.io/DiBL/grounds/index.html) and inkscape plugins  
     this allowed again more patterns but still had a limited choice of stitches 
 * **fall 2015**:  
-  Proof of concept with [force graphs](glossary),
-  Inspiration for this [cheat-sheet](/GroundForge/images/matrix-template.png).  
+  * Proof of concept with [force graphs](glossary),
+  * Inspiration for this [cheat-sheet](/GroundForge/images/matrix-template.png).  
   Both reduced the burden of complex GUIs with file IO and parsing complex data structures.
 * **2017**:
   * Discovery of Jo Edkins' [index](http://www.theedkins.co.uk/jo/lace/whiting/index.htm)
@@ -40,10 +40,16 @@ Timeline
   * Tutorials for a workshop at IOLI UnConn 2.0 hosted by _the lace museum_
   * birth of the nets page
 * **May 2022**:
-  birth of the pdf/print friendly page
+  * birth of the pdf/print friendly page
 * **January 2023**:
-  birth of the symmetry page,  
-* **mid 2023**:
-  Split the main GroundForge page into pattern/stitches/droste
-* **fall 2023**
-  Recipes for snowflakes without having to distort initial geometry
+  * birth of the symmetry page
+* **Mid 2023**:
+  * Split the main GroundForge page into pattern/stitches/droste
+  * the separated pages are print friendly by themselves
+* **Fall 2023**
+  Proof of concept for snowflakes recipes without having to distort initial geometry
+* **November 2024**:
+  * reduced the all-in-one page to links to the new pages and clean-up
+* **December 2024**:
+  * Snowflakes recipes integrated into a mixer of four snowflakes
+  * Droste page (pair diagrams to thread diagrams) now uses the clickable new color code
