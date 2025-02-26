@@ -14,7 +14,7 @@ header h1 {width: 100%; font-size: 57px;}
     }
 }
 @media only print {
-    #sidebar, header H2 { display: none; }
+    #sidebar, header .button { display: none; }
     header h1 { font-size: 35px; }
 }
 header a{color: #fff}
