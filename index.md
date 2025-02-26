@@ -26,8 +26,9 @@ D-BL offers a roof to a suite of projects and applications related to bobbin lac
     * [Tesselace](https://d-bl.github.io/tesselace-to-gf/) &mdash; Algorithmically designed lace tessellations linked to GroundForge diagrams.
     * [Sampler](https://d-bl.github.io/gw-lace-to-gf/) by Gertrude Whithing &mdash; Demonstrates the power and limitations.
     * [MAE](https://d-bl.github.io/MAE-gf/) Many Attractive Examples &mdash; Community contributions.
-  * [Design](/GroundForge/pattern) your own pattern from scratch
-  * Symmetrical [pattern variations](https://d-bl.github.io/GroundForge/symmetry) from your own template.
-  * Add components with customized forms to [your own web pages](https://d-bl.github.io/GroundForge/API).
+  * Advanced subjects
+    * [Design](/GroundForge/pattern) your own pattern from scratch
+    * Symmetrical [pattern variations](https://d-bl.github.io/GroundForge/symmetry) from your own template.
+    * Add components with customized forms to [your own web pages](https://d-bl.github.io/GroundForge/API).
 
 **Licenses** vary per project. We usually have GPL, simplified BSD for code and CC-BY for documentation and examples.
