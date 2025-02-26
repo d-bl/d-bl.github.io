@@ -13,7 +13,7 @@ header h1 {width: 100%; font-size: 57px;}
         width: 490px; /* same width for header lines as for content */
     }
 }
-@media print {
+@media only print {
     header, .sidebar { display: none; }
 }
 header a{color: #fff}
