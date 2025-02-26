@@ -47,7 +47,7 @@ Timeline
   * Split the main GroundForge page into pattern/stitches/droste
   * the separated pages are print friendly by themselves
 * **Fall 2023**
-  Proof of concept for snowflakes recipes without having to distort initial geometry
+  * Proof of concept for snowflakes recipes without having to distort initial geometry
 * **November 2024**:
   * reduced the all-in-one page to links to the new pages and clean-up
 * **December 2024**:
