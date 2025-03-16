@@ -16,10 +16,10 @@ D-BL offers a roof to a suite of projects and applications related to bobbin lac
 **GroundForge** generates thread diagrams from pair diagrams (and vise versa) 
   
 ![](images/thread-to-pairs-tothreads.png?align=right)
+  * Two basic [nets](https://d-bl.github.io/GroundForge/nets)
+    generate dozens of thread diagrams by combining mirrored versions of a single stitch of your choice.
   * Mix up to 4 different [snowflakes](https://d-bl.github.io/GroundForge/mix4snow) with your own choice of stitches for new grounds.
-  * Play with stitches
-    in [simple nets](https://d-bl.github.io/GroundForge/nets),
-    wobbling [Rose ground units](https://d-bl.github.io/MAE-gf/docs/droste#wobble),
+  * Play with stitches on wobbling [Rose ground units](https://d-bl.github.io/MAE-gf/docs/droste#wobble),
     [Valenciennes/Paris](https://d-bl.github.io/gw-lace-to-gf/#a7-h7g11--valenciennes) or
     [snow in Paris](/GroundForge-help/Binche).
   * Browse galleries with predefined patterns (traditional and experimental) and play with your own choice of stitches:
