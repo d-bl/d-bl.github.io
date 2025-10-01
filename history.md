@@ -4,7 +4,7 @@ title: History of D-BL and GroundForge
 ---
 
 D-BL started as DiBL under google-code. By the time that google-code discontinued,
-an account by the name dibl was already taken and the _i_ replaced by a dash.
+an account on GitHub by the name dibl was already taken, so we replaced the _i_ by a dash.
 
 The dotted  polar grids were exercises to master new technology.
 
@@ -20,8 +20,8 @@ Timeline
   You can try to execute it with [OpenJDK 8](https://adoptopenjdk.net/releases.html?variant=openjdk8).
 * **2013**: 
   * Discovery of PhD research in progress that lead to [tesselace](https://tesselacedotcom.wordpress.com/)
-  * Redesign using SVG, a combination of a [web application](https://jo-pol.github.io/DiBL/grounds/index.html) and inkscape plugins  
-    this allowed again more patterns but still had a limited choice of stitches 
+  * Redesign using SVG, a combination of a [web application](https://jo-pol.github.io/DiBL/grounds/index.html) and inkscape plugins.
+    This allowed again more patterns but still had a limited choice of stitches 
 * **fall 2015**:  
   * Proof of concept with [force graphs](glossary),
   * Inspiration for this [cheat-sheet](/GroundForge/images/matrix-template.png).  
@@ -44,8 +44,9 @@ Timeline
 * **January 2023**:
   * birth of the symmetry page
 * **Mid 2023**:
-  * Split the main GroundForge page into pattern/stitches/droste
-  * the separated pages are print friendly by themselves
+  * Split the main GroundForge page into pattern/stitches/droste.
+  * The separated pages are print friendly by themselves.
+  * Each of the separated pages has a button that shows/hides applicable help pages, sometimes with half minute video's.
 * **Fall 2023**
   * Proof of concept for snowflakes recipes without having to distort initial geometry
 * **November 2024**:

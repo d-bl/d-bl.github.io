@@ -27,17 +27,17 @@ See also [icons](GroundForge-help/Icons)
 > 
 > <img src="/GroundForge/images/logo-medium.png" width="64px"/>
 
-**Stitch**
-
-> Interaction between two pairs, for the application a stitch may consist of stitch-pin-stitch
-
 **Licenses**
 
 > You have the rights to copy, modify and republish, with some restrictions.
 > So far we have [cc-by v4](http://creativecommons.org/licenses/by/4.0/) for the documentation
 > and either [GPL v3](https://github.com/d-bl/GroundForge/blob/master/LICENSE)
 > or [Simplified BSD](https://choosealicense.com/licenses/bsd-2-clause/)
-> for the code under the hood.
-> 
+> for the code.
+>
 > ![](/tesselace-to-gf/assets/images/CC-BY-80x15.png)
 > ![](https://www.gnu.org/graphics/gplv3-88x31.png)
+
+**Stitch**
+
+> Interaction between two pairs, for the application a stitch may consist of stitch-pin-stitch
