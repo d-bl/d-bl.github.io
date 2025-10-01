@@ -1,6 +1,6 @@
 
 
-- [Navigation](/Groundforge-help/navigation)
+- [Navigation](/GroundForge-help/navigation)
 - [History](history)
 - [Abandoned](abandoned) apps/plugin
 - [Glossary](glossary)
