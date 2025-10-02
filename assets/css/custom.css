@@ -14,12 +14,29 @@ header h1 {width: 100%; font-size: 57px;}
     }
 }
 @media only print {
-    #sidebar, header .button { display: none; }
+    #sidebar, header .button, #hamburger-menu  { display: none; }
     header h1 { font-size: 35px; }
 }
+
+#hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+}
+@media (max-width: 767px) {
+    #hamburger-menu {
+        display: block;
+    }
+}
+
 header a{color: #fff}
 header a:hover {color: #9ddcff}
 
+#main-content ul ul { margin-bottom: 0; }
 #sidebar ul { font-weight: normal; padding-left: 0; margin-bottom: 0; margin-top: 0; padding-bottom: 8px; }
 #sidebar ul ul { padding-left: 16px;  padding-bottom: 0;}
 #sidebar li { list-style-type: none; padding-bottom: 0; }
