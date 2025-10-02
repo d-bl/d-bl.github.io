@@ -31,4 +31,10 @@ D-BL offers a roof to a suite of projects and applications related to bobbin lac
     * Symmetrical [pattern variations](https://d-bl.github.io/GroundForge/symmetry) from your own template.
     * Add components with customized forms to [your own web pages](https://d-bl.github.io/GroundForge/API).
 
-**Licenses** vary per project. We usually have GPL, simplified BSD for code and CC-BY for documentation and examples.
+**Licenses** vary per project.  
+You have the rights to copy, modify and republish, with some restrictions.  
+So far we have [cc-by v4](http://creativecommons.org/licenses/by/4.0/) for the documentation
+and either [GPL v3](https://github.com/d-bl/GroundForge/blob/master/LICENSE)
+or [Simplified BSD](https://choosealicense.com/licenses/bsd-2-clause/)
+for the code.
+
