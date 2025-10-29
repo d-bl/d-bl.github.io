@@ -23,7 +23,7 @@ Timeline
   * Redesign using SVG, a combination of a [web application](https://jo-pol.github.io/DiBL/grounds/index.html) and inkscape plugins.
     This allowed again more patterns but still had a limited choice of stitches 
 * **fall 2015**:  
-  * Proof of concept with [force graphs](glossary),
+  * Proof of concept with [force graphs](../GroundForge-help/docs/glossary.md),
   * Inspiration for this [cheat-sheet](/GroundForge/images/matrix-template.png).  
   Both reduced the burden of complex GUIs with file IO and parsing complex data structures.
 * **2017**:

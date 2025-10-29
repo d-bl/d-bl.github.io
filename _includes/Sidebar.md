@@ -1,9 +1,7 @@
 
 
-- [Navigation](/GroundForge-help/navigation)
 - [History](history)
 - [Abandoned](abandoned) apps/plugin
-- [Glossary](glossary)
 
 ### Contact
 
