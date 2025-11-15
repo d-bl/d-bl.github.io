@@ -6,10 +6,13 @@ title: History of D-BL and GroundForge
 D-BL started as DiBL under google-code. By the time that google-code discontinued,
 an account on GitHub by the name dibl was already taken, so we replaced the _i_ by a dash.
 
-The dotted  polar grids were exercises to master new technology.
+The dotted polar grids were exercises to master new technology.
 
 Timeline
 --------
+
+More details in reversed order in the [release notes](https://github.com/d-bl/GroundForge/releases).
+The year-quarter notation is a rough indication. The dates of the assets are more exact.
 
 * **end of 2001**:  
   * The first release for [flanders](https://jo-pol.github.io/flanders/) thread diagrams
@@ -53,4 +56,10 @@ Timeline
   * reduced the all-in-one page to links to the new pages and clean-up
 * **December 2024**:
   * Snowflakes recipes integrated into a mixer of four snowflakes
-  * Droste page (pair diagrams to thread diagrams) now uses the clickable new color code
+  * Droste page (pair diagrams to thread diagrams) now uses the new color code
+* **Early in 2025**:
+  * Droste page pair diagrams now are clickable to assign stitches from the gallery
+  * Nets page simplified/reorganized
+* **Fall 2025**: 
+  * Snow mixer has its own sidebar
+  * Tutorial to mix snowflakes with more choices than the mixer
