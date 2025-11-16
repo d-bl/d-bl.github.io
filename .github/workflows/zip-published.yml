@@ -9,9 +9,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Update HTML hrefs
-        run: |
-          find d-bl.github.io -name "*.html" -exec sed -i 's/href="\([^"]*\)"/href="https:\/\/d-bl.github.io\/\1"/g' {} +
       - name: Zip published webpages
         run: zip -r site.zip d-bl.github.io
       - name: Upload zip artifact
