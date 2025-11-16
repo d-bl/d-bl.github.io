@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Zip published webpages
-        run: zip -r site.zip d-bl.github.io
+        run: zip -r site.zip .
       - name: Upload zip artifact
         uses: actions/upload-artifact@v4
         with:
