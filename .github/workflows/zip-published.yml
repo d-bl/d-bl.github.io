@@ -30,10 +30,9 @@ jobs:
           for repo in d-bl.github.io GroundForge GroundForge-help MAE-gf tesselace-to-gf gw-lace-to-gf inkscape-bobbinlace polar-grids; do
             echo "Checking out $repo"
             gh repo clone d-bl/$repo d-bl/$repo || echo "Failed to clone $repo"
+           (cd d-bl/$repo && jekyll build || echo "Failed to build $repo")
           done
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Show files
-        run: ls -la d-bl
       - name: Build site
         run: jekyll build || true
