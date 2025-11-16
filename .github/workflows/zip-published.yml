@@ -13,8 +13,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-      - name: Install Jekyll and Bundler
-        run: gem install jekyll bundler
+      - name: Install Jekyll, Bundler, and theme
+        run: gem install jekyll bundler jekyll-theme-architect
       - name: Build site
         run: jekyll build
       - name: Zip published webpages
