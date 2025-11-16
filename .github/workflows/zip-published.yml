@@ -9,8 +9,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Build site
+        run: jekyll build
       - name: Zip published webpages
-        run: zip -r site.zip .
+        run: zip -r site.zip _site
       - name: Upload zip artifact
         uses: actions/upload-artifact@v4
         with:
