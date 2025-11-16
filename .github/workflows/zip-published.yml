@@ -34,4 +34,8 @@ jobs:
 #      - name: Build site
 #        run: jekyll build || true
       - name: show files
-        run: pwd || ls -la *
+        run: pwd || true
+      - name: show files
+        run: ls -la * || true
+      - name: show more files
+        run: ls -la */* || true
