@@ -6,21 +6,30 @@ on:
 jobs:
   zip:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repo:
+          - d-bl.github.io
+          - GroundForge
+          - GroundForge-help
+          - MAE-gf
+          - tesselace-to-gf
+          - gwlace-to-gf
+          - inkscape-bobbinlace
+          - polar-grids
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
       - name: Install Jekyll, Bundler, and theme
         run: gem install jekyll bundler jekyll-theme-architect
-      - name: Build site
-        run: jekyll build
-      - name: Zip published webpages
-        run: zip -r site.zip _site
-      - name: Upload zip artifact
-        uses: actions/upload-artifact@v4
+      - name: Checkout ${{ matrix.repo }}
+        uses: actions/checkout@v4
         with:
-          name: published-site
-          path: site.zip
+          repository: d-bl/${{ matrix.repo }}
+        continue-on-error: true
+      - name: Build site
+        run: jekyll build || true
+      - name: show files
+        run: ls -la *
