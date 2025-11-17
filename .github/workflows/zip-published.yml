@@ -24,15 +24,16 @@ jobs:
           ruby-version: '3.1'
       - name: Install Jekyll, Bundler, and theme
         run: gem install jekyll bundler jekyll-theme-architect
-      - name: Checkout all repos
-        run: |
-          mkdir -p d-bl
-          for repo in d-bl.github.io GroundForge GroundForge-help MAE-gf tesselace-to-gf gw-lace-to-gf inkscape-bobbinlace polar-grids; do
-            echo "Checking out $repo"
-            gh repo clone d-bl/$repo d-bl/$repo || echo "Failed to clone $repo"
-           (cd d-bl/$repo && jekyll build || echo "Failed to build $repo")
-          done
+      - name: Checkout ${{ matrix.repo }}
+        uses: actions/checkout@v4
+        with:
+          repository: d-bl/${{ matrix.repo }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: d-bl/${{ matrix.repo }}
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Build site
         run: jekyll build || true
+      - name: show files
+        run: ls -R .
