@@ -24,6 +24,8 @@ jobs:
           ruby-version: '3.1'
       - name: Install Jekyll, Bundler, and theme
         run: gem install jekyll bundler jekyll-theme-architect
+      - name: show files
+        run: ls -R .
       - name: Checkout ${{ matrix.repo }}
         uses: actions/checkout@v4
         with:
