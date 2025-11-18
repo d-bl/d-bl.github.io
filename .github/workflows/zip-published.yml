@@ -1,41 +1,44 @@
-name: Zip Published Webpages
+name: Download Latest Page Build Artifacts
 
 on:
   workflow_dispatch:
 
 jobs:
-  zip:
+  download-assets:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         repo:
           - d-bl.github.io
           - GroundForge
-          - GroundForge-help
-          - MAE-gf
-          - tesselace-to-gf
-          - gw-lace-to-gf
-          - inkscape-bobbinlace
-          - polar-grids
+#          - GroundForge-help
+#          - MAE-gf
+#          - tesselace-to-gf
+#          - gw-lace-to-gf
+#          - inkscape-bobbinlace
+#          - polar-grids
     steps:
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-      - name: Install Jekyll, Bundler, and theme
-        run: gem install jekyll bundler jekyll-theme-architect
-      - name: show files
-        run: ls -R .
-      - name: Checkout ${{ matrix.repo }}
-        uses: actions/checkout@v4
-        with:
-          repository: d-bl/${{ matrix.repo }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: d-bl/${{ matrix.repo }}
-        continue-on-error: true
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh
+      - name: Download Page Build Artifacts
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build site
-        run: jekyll build || true
-      - name: show files
-        run: ls -R .
+        run: |
+          gh auth login --with-token < <(echo "$GH_TOKEN")
+          repo="d-bl/${{ matrix.repo }}"
+          run_id=$(gh run list --repo "$repo" --workflow page-build-deployment --limit 1 --json databaseId -q '.[0].databaseId')
+          if [ -z "$run_id" ]; then
+            echo "No workflow run found for $repo"
+            exit 1
+          fi
+          artifact_url=$(gh run view "$run_id" --repo "$repo" --json artifacts -q '.artifacts[0].archiveDownloadUrl')
+          if [ -n "$artifact_url" ]; then
+            echo "Artifact expired, rerunning workflow for $repo"
+            gh workflow run page-build-deployment --repo "$repo"
+          fi
+          echo "Downloading artifact for $repo"
+          gh run download "$run_id" --repo "$repo"
+      - name: List Downloaded Artifacts
+        run: |
+          pwd
+          ls -la ../*
