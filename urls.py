@@ -31,6 +31,7 @@ for root, _, files in os.walk('.'):
     for file in files:
       if file.endswith('.html'):
         file_path = os.path.relpath(os.path.dirname(os.path.join(root, file)), '.')
+        print(f'Processing: {file_path} ==== {os.path.join(root, file)}')
         with open(os.path.join(root, file), encoding='utf-8') as f:
           parser = URLExtractor(file_path, repo)
           parser.feed(f.read())
