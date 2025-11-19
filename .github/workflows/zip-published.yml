@@ -21,7 +21,6 @@ jobs:
       - name: Download github-pages artifact
         uses: actions/download-artifact@v5
         with:
-          name: download ${{ matrix.repo }}
           repository: d-bl/${{ matrix.repo }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
