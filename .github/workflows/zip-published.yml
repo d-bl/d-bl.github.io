@@ -46,7 +46,7 @@ jobs:
 
       - name: Collect URLs from extracted HTML pages
         run: |
-          python .github/workflows/urls.py ${{ matrix.repo }} > collected-urls.txt
+          python urls.py ${{ matrix.repo }} > collected-urls.txt
         shell: bash
 
       - name: Fix collected urls
