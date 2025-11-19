@@ -1,4 +1,4 @@
-name: Analyze Latest Page Build Artifacts
+name: Check links of  d-bl repos
 
 on:
   workflow_dispatch:
@@ -11,12 +11,12 @@ jobs:
         repo:
           - d-bl.github.io
           - GroundForge
-#          - GroundForge-help
-#          - MAE-gf
-#          - tesselace-to-gf
-#          - gw-lace-to-gf
-#          - inkscape-bobbinlace
-#          - polar-grids
+          - GroundForge-help
+          - MAE-gf
+          - tesselace-to-gf
+          - gw-lace-to-gf
+          - inkscape-bobbinlace
+          - polar-grids
     steps:
 
       - name: Get latest successful run ID for ${{ matrix.repo }}
@@ -50,7 +50,7 @@ jobs:
 
       - name: Collect URLs from extracted HTML pages
         run: |
-          python urls.py ${{ matrix.repo }} > collected-urls.txt
+          python extract-links.py ${{ matrix.repo }} > collected-urls.txt
         shell: bash
 
       - name: Show collected urls
@@ -58,4 +58,5 @@ jobs:
 
       - name: Show problematic URLs
         run: |
-          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {}' < collected-urls.txt | grep -v '301  ' | grep -v '400  '
+          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' \ 
+            < collected-urls.txt | grep -v '301  ' | grep -v '200  '

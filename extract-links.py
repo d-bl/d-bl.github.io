@@ -1,4 +1,4 @@
-# Script to extract URLs from HTML files in .github/workflows
+# used in workflow after download of github-pages artifact
 import os
 import sys
 from html.parser import HTMLParser
