@@ -13,10 +13,10 @@ jobs:
             index: 0
           - repo: GroundForge
             index: 1
-          - repo: GroundForge-help
-            index: 2
           - repo: MAE-gf
             index: 3
+          - repo: GroundForge-help
+            index: 2
           - repo: tesselace-to-gf
             index: 4
           - repo: gw-lace-to-gf
@@ -56,7 +56,7 @@ jobs:
 
       - name: Get script
         run: |
-          wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/urls.py
+          wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/extract-links.py
 
       - name: Collect URLs from extracted HTML pages
         run: |
