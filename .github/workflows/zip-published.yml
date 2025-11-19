@@ -42,7 +42,7 @@ jobs:
       - name: List extracted files of ${{ matrix.repo }}
         run: |
           pwd
-          ls -R ..
+          ls -R ../..
 
       - name: Collect URLs from extracted HTML pages
         run: |
