@@ -23,7 +23,7 @@ jobs:
         with:
           name: download ${{ matrix.repo }}
           repository: d-bl/${{ matrix.repo }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: List Downloaded Artifacts
