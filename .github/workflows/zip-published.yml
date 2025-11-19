@@ -21,6 +21,7 @@ jobs:
       - name: Download github-pages artifact
         uses: actions/download-artifact@v5
         with:
+          name: github-pages
           repository: d-bl/${{ matrix.repo }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
@@ -28,4 +29,4 @@ jobs:
       - name: List Downloaded Artifacts
         run: |
           pwd
-          ls -R
+          ls -R /home/runner/work
