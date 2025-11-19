@@ -49,6 +49,6 @@ jobs:
           python urls.py ${{ matrix.repo }} > collected-urls.txt
         shell: bash
 
-      - name: Fix collected urls
+      - name: Show collected urls
         run: |
           cat collected-urls.txt
