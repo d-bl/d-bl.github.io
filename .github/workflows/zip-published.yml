@@ -48,11 +48,7 @@ jobs:
         run: |
           find . -name '*.html' -print0 | xargs -0 grep -oP 'href="\K[^"]+' | \
             sed 's/[?].*//' | \
-            sed 's|:/|https://d-bl.github.io/|' | \
+            sed 's|html:/|html === |' | \
+            sed 's| /| https://d-bl.github.io/|' | \
             sort -u > collected-urls.txt
           cat collected-urls.txt          
-
-      - name: fix root-relative urls
-        run: |
-          sed '/.*://' collected-urls.txt | sort -u | sed 's!^/!https://d-bl.github.io/!' > absolute-urls.txt
-          cat absolute-urls.txt
