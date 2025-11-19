@@ -19,7 +19,7 @@ jobs:
 #          - polar-grids
     steps:
 
-      - name: Get latest successful run ID
+      - name: Get latest successful run ID for ${{ matrix.repo }}
         id: get_run_id
         run: |
           run_id=$(gh run list --repo d-bl/${{ matrix.repo }} --workflow pages-build-deployment --status success --limit 1 --json databaseId -q '.[0].databaseId')
@@ -27,7 +27,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Download github-pages artifact
+      - name: Download github-pages artifact of ${{ matrix.repo }}
         uses: actions/download-artifact@v5
         with:
           repository: d-bl/${{ matrix.repo }}
@@ -35,6 +35,11 @@ jobs:
           run-id: ${{ steps.get_run_id.outputs.run_id }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Untar downloaded artifact of ${{ matrix.repo }}
+        run: |
+          mkdir -p ${{ matrix.repo }}
+          tar -xf artifact.tar -C ${{ matrix.repo }}
 
       - name: List Downloaded Artifacts
         run: |
