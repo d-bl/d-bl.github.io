@@ -55,5 +55,5 @@ jobs:
 
       - name: Show collected urls
         run: |
-          ls
+          ls -l
           cat collected-urls.txt

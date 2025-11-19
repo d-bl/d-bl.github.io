@@ -27,7 +27,7 @@ class URLExtractor(HTMLParser):
           self.urls.add(f'https://d-bl.github.io/{repo}/' + found_url)
 
 urls = set()
-for root, _, files in os.walk(repo):
+for root, _, files in os.walk('.'):
     for file in files:
       if file.endswith('.html'):
         file_path = os.path.relpath(os.path.dirname(os.path.join(root, file)), '.')
