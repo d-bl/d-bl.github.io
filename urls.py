@@ -23,8 +23,8 @@ class URLExtractor(HTMLParser):
           if found_url.startswith('/'):
             found_url = 'https://d-bl.github.io' + found_url
           elif not (found_url.startswith('http://') or found_url.startswith('https://')):
-              found_url = os.path.normpath(os.path.join(self.file_path, found_url))
-          self.urls.add(f'https://d-bl.github.io/{repo}/' + found_url)
+            found_url = f'https://d-bl.github.io/{repo}/' + os.path.normpath(os.path.join(self.file_path, found_url))
+          self.urls.add(found_url)
 
 urls = set()
 for root, _, files in os.walk('.'):
