@@ -1,4 +1,4 @@
-name: Download Latest Page Build Artifacts
+name: Analyze Latest Page Build Artifacts
 
 on:
   workflow_dispatch:
@@ -37,11 +37,15 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Untar downloaded artifact of ${{ matrix.repo }}
-        run: |
-          mkdir -p ${{ matrix.repo }}
-          tar -xf artifact.tar -C ${{ matrix.repo }}
+        run: tar -xf artifact.tar
 
-      - name: List Downloaded Artifacts
+      - name: List extracted files of ${{ matrix.repo }}
         run: |
           pwd
           ls -R ..
+
+      - name: Collect URLs from extracted HTML pages
+        run: |
+          find . -name '*.html' -print0 | xargs -0 grep -oP 'href="\K[^"]+' | \
+            sed 's/[?].*//' | sort -u > collected-urls.txt
+          cat collected-urls.txt          
