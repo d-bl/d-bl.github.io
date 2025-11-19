@@ -68,5 +68,4 @@ jobs:
 
       - name: Show problematic URLs
         run: |
-          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' \ 
-            < collected-urls.txt | grep -v '301  ' | grep -v '200  '
+          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' < collected-urls.txt | grep -v '301  ' | grep -v '200  '
