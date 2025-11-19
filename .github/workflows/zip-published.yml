@@ -18,27 +18,15 @@ jobs:
 #          - inkscape-bobbinlace
 #          - polar-grids
     steps:
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh
-      - name: Download Page Build Artifacts
+      - name: Download github-pages artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: download ${{ matrix.repo }}
+          repository: d-bl/${{ matrix.repo }}
+          token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh auth login --with-token < <(echo "$GH_TOKEN")
-          repo="d-bl/${{ matrix.repo }}"
-          run_id=$(gh run list --repo "$repo" --workflow page-build-deployment --limit 1 --json databaseId -q '.[0].databaseId')
-          if [ -z "$run_id" ]; then
-            echo "No workflow run found for $repo"
-            exit 1
-          fi
-          artifact_url=$(gh run view "$run_id" --repo "$repo" --json artifacts -q '.artifacts[0].archiveDownloadUrl')
-          if [ -n "$artifact_url" ]; then
-            echo "Artifact expired, rerunning workflow for $repo"
-            gh workflow run page-build-deployment --repo "$repo"
-          fi
-          echo "Downloading artifact for $repo"
-          gh run download "$run_id" --repo "$repo"
       - name: List Downloaded Artifacts
         run: |
           pwd
-          ls -la ../*
+          ls -R
