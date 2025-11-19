@@ -56,6 +56,6 @@ jobs:
       - name: Show collected urls
         run: cat collected-urls.txt
 
-      - name: Show URLs that cause 404 Not Found
+      - name: Show problematic URLs
         run: |
-          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {}' < collected-urls.txt
+          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {}' < collected-urls.txt | grep -v '301  ' | grep -v '400  '
