@@ -55,5 +55,6 @@ jobs:
         run: |
           sed 's!html:!html === !' collected-urls.txt | \
             sed 's! /! https://d-bl.github.io/!' | \
+            sed -E 's!(=== )(/|:/)!=== https://d-bl.github.io/!' \
             sort -u > fixed-urls.txt
           cat fixed-urls.txt          
