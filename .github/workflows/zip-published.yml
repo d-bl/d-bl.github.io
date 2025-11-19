@@ -46,10 +46,34 @@ jobs:
 
       - name: Collect URLs from extracted HTML pages
         run: |
-          find . -name '*.html' -print0 | xargs -0 grep -oP 'href="\K[^"]+' | \
-            sed 's/[?].*//' | \
-            sort -u > collected-urls.txt
-          cat collected-urls.txt          
+          import os
+          from html.parser import HTMLParser
+          
+          class URLExtractor(HTMLParser):
+            def __init__(self):
+              super().__init__()
+              self.urls = set()
+              self.attrs = {'href', 'src', 'data-src', 'data-href', 'action', 'poster'}
+            
+            def handle_starttag(self, tag, attrs):
+              for attr, value in attrs:
+                if attr.lower() in self.attrs and value:
+                  self.urls.add(value.split('?')[0])
+            
+            urls = set()
+          for root, _, files in os.walk('.'):
+            for file in files:
+              if file.endswith('.html'):
+                with open(os.path.join(root, file), encoding='utf-8') as f:
+                  parser = URLExtractor()
+                  parser.feed(f.read())
+                  urls.update(parser.urls)
+          
+          with open('collected-urls.txt', 'w', encoding='utf-8') as out:
+            for url in sorted(urls):
+              out.write(url + '\n')
+
+        shell: python
 
       - name: Fix collected urls
         run: |
