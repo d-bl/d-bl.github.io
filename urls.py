@@ -19,8 +19,8 @@ class URLExtractor(HTMLParser):
     def handle_starttag(self, tag, attrs):
       for attr, value in attrs:
         if attr.lower() in self.attrs and value and not value.startswith('javascript'):
-          found_url = value.split('?')[0]
-          if found_url.startswith('/'):
+            found_url = value.split('?')[0].split("'")[0]
+            if found_url.startswith('/'):
             found_url = 'https://d-bl.github.io' + found_url
           elif not (found_url.startswith('http://') or found_url.startswith('https://')):
             found_url = f'https://d-bl.github.io/{repo}/' + os.path.normpath(os.path.join(self.file_path, found_url))
