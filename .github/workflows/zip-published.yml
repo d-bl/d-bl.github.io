@@ -46,6 +46,11 @@ jobs:
 
       - name: Collect URLs from extracted HTML pages
         run: |
-          find . -name '*.html' -print0 | xargs -0 grep -oPH 'href="\K[^"]+' | \
-            sed 's/[?].*//' | awk -F: '{urls[$2]=urls[$2] $1 " "} END {for (u in urls) print u ":" urls[u]}' > urls-to-pages.txt
-          cat urls-to-pages.txt
+          find . -name '*.html' -print0 | xargs -0 grep -oP 'href="\K[^"]+' | \
+            sed 's/[?].*//' | sort -u > collected-urls.txt
+          cat collected-urls.txt          
+
+      - name: fix root-relative urls
+        run: |
+          sed '/.*://' collected-urls.txt | sort -u | sed 's!^/!https://d-bl.github.io/!' > absolute-urls.txt
+          cat absolute-urls.txt
