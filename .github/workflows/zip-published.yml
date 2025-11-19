@@ -54,6 +54,4 @@ jobs:
         shell: bash
 
       - name: Show collected urls
-        run: |
-          ls -l
-          cat collected-urls.txt
+        run: cat collected-urls.txt

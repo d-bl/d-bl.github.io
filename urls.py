@@ -10,7 +10,7 @@ if len(sys.argv) < 2:
 repo = sys.argv[1]
 
 class URLExtractor(HTMLParser):
-    def __init__(self, file_path, repo):
+    def __init__(self, file_path):
       super().__init__()
       self.urls = set()
       self.file_path = file_path
@@ -31,9 +31,8 @@ for root, _, files in os.walk('.'):
     for file in files:
       if file.endswith('.html'):
         file_path = os.path.relpath(os.path.dirname(os.path.join(root, file)), '.')
-        print(f'Processing: {file_path} ==== {os.path.join(root, file)}')
         with open(os.path.join(root, file), encoding='utf-8') as f:
-          parser = URLExtractor(file_path, repo)
+          parser = URLExtractor(file_path)
           parser.feed(f.read())
           urls.update(parser.urls)
 
