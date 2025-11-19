@@ -18,14 +18,25 @@ jobs:
 #          - inkscape-bobbinlace
 #          - polar-grids
     steps:
+
+      - name: Get latest successful run ID
+        id: get_run_id
+        run: |
+          run_id=$(gh run list --repo d-bl/${{ matrix.repo }} --workflow pages-build-deployment --status success --limit 1 --json databaseId -q '.[0].databaseId')
+          echo "run_id=$run_id" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Download github-pages artifact
         uses: actions/download-artifact@v5
         with:
           repository: d-bl/${{ matrix.repo }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ steps.get_run_id.outputs.run_id }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: List Downloaded Artifacts
         run: |
           pwd
-          ls -R /home/runner/work
+          ls -R ..
