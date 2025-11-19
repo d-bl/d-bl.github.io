@@ -44,11 +44,16 @@ jobs:
           pwd
           ls -R ../..
 
+      - name: Get script
+        run: |
+          wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/urls.py
+
       - name: Collect URLs from extracted HTML pages
         run: |
-          python ../d-bl.github.io/urls.py ${{ matrix.repo }} > collected-urls.txt
+          python urls.py ${{ matrix.repo }} > collected-urls.txt
         shell: bash
 
       - name: Show collected urls
         run: |
+          ls
           cat collected-urls.txt
