@@ -1,3 +1,4 @@
+# Script to extract URLs from HTML files in .github/workflows
 import os
 import sys
 from html.parser import HTMLParser
@@ -26,7 +27,7 @@ class URLExtractor(HTMLParser):
           self.urls.add(f'https://d-bl.github.io/{repo}/' + found_url)
 
 urls = set()
-for root, _, files in os.walk('.'):
+for root, _, files in os.walk('.github/workflows'):
     for file in files:
       if file.endswith('.html'):
         file_path = os.path.relpath(os.path.dirname(os.path.join(root, file)), '.')
