@@ -53,7 +53,7 @@ jobs:
 
       - name: Fix collected urls
         run: |
-          sed 's!html:/!html === !' collected-urls.txt | \
+          sed 's!html:!html === !' collected-urls.txt | \
             sed 's! /! https://d-bl.github.io/!' | \
             sort -u > fixed-urls.txt
           cat fixed-urls.txt          
