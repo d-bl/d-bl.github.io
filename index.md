@@ -37,7 +37,7 @@ GroundForge generates thread diagrams from pair diagrams and can use the pair di
 ### Licenses
 Licenses vary per project.  
 You have the rights to copy, modify and republish, with some restrictions.  
-So far we have [cc-by v4](http://creativecommons.org/licenses/by/4.0/) for the documentation
+So far we have [cc-by v4](https://creativecommons.org/licenses/by/4.0/) for the documentation
 and either [GPL v3](https://github.com/d-bl/GroundForge/blob/master/LICENSE)
 or [Simplified BSD](https://choosealicense.com/licenses/bsd-2-clause/)
 for the code.

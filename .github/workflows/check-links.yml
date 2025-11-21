@@ -4,31 +4,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  download-assets:
+  check-links:
     runs-on: ubuntu-latest
+    continue-on-error: true # in case an artifact is not available
     strategy:
+      max-parallel: 1 # prevent cancel of artifact downloads
       matrix:
         include:
-          - repo: d-bl.github.io
-            index: 0
-          - repo: GroundForge
-            index: 1
-          - repo: MAE-gf
-            index: 3
-          - repo: GroundForge-help
-            index: 2
-          - repo: tesselace-to-gf
-            index: 4
-          - repo: gw-lace-to-gf
-            index: 5
-          - repo: inkscape-bobbinlace
-            index: 6
-          - repo: polar-grids
-            index: 7
+          - repo:
+            - d-bl.github.io
+            - GroundForge
+            - MAE-gf
+            - GroundForge-help
+            - tesselace-to-gf
+            - inkscape-bobbinlace
+            - polar-grids
+            - gw-lace-to-gf # >350 sleeps, a lot of requests on https://archive.org/details/laceguideformak00whit/page/
     steps:
-      - name: wait
-        run: sleep $(( ${{ matrix.index }} * 60 ))
-
       - name: Get latest successful run ID for ${{ matrix.repo }}
         id: get_run_id
         run: |
@@ -54,9 +46,10 @@ jobs:
           pwd
           ls -R ../..
 
-      - name: Get script
+      - name: Get extract-links.py
         run: |
-          wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/extract-links.py
+          wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/.github/workflows/extract-links.py
+        continue-on-error: false
 
       - name: Collect URLs from extracted HTML pages
         run: |
@@ -68,4 +61,4 @@ jobs:
 
       - name: Show problematic URLs
         run: |
-          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' < collected-urls.txt | grep -v '301  ' | grep -v '200  '
+          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' < collected-urls.txt | egrep -v '(301  |302  |200  )'

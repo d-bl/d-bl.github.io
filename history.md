@@ -26,12 +26,12 @@ The year-quarter notation is a rough indication. The dates of the assets are mor
   * Redesign using SVG, a combination of a [web application](https://jo-pol.github.io/DiBL/grounds/index.html) and inkscape plugins.
     This allowed again more patterns but still had a limited choice of stitches 
 * **fall 2015**:  
-  * Proof of concept with [force graphs](../GroundForge-help/docs/glossary.md),
+  * Proof of concept with [force graphs](/GroundForge-help/Glossary#force-graphs),
   * Inspiration for this [cheat-sheet](/GroundForge/images/matrix-template.png).  
   Both reduced the burden of complex GUIs with file IO and parsing complex data structures.
 * **2017**:
   * Discovery of Jo Edkins' [index](http://www.theedkins.co.uk/jo/lace/whiting/index.htm)
-    on an out-of-copyright book, the [sampler](https://www.metmuseum.org/blogs/collection-insights/2018/gertrude-whiting-bobbin-lace-sampler)
+    on an out-of-copyright book, the [sampler](https://www.metmuseum.org/perspectives/gertrude-whiting-bobbin-lace-sampler)
     by Gertrude Whiting.
   * Request for a guinea pig to review GroundForge.
   * Discovery of the Droste effect: using thread diagrams as pair diagrams. 
