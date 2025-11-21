@@ -10,16 +10,15 @@ jobs:
     strategy:
       max-parallel: 1 # prevent cancel of artifact downloads
       matrix:
-        include:
-          - repo:
-            - d-bl.github.io
-            - GroundForge
-            - MAE-gf
-            - GroundForge-help
-            - tesselace-to-gf
-            - inkscape-bobbinlace
-            - polar-grids
-            - gw-lace-to-gf # >350 sleeps, a lot of requests on https://archive.org/details/laceguideformak00whit/page/
+        repo:
+          - d-bl.github.io
+          - GroundForge
+          - MAE-gf
+          - GroundForge-help
+          - tesselace-to-gf
+          - inkscape-bobbinlace
+          - polar-grids
+          - gw-lace-to-gf # >350 sleeps, a lot of requests on https://archive.org/details/laceguideformak00whit/page/
     steps:
       - name: Get latest successful run ID for ${{ matrix.repo }}
         id: get_run_id
