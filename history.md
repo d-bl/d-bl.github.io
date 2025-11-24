@@ -30,7 +30,7 @@ The year-quarter notation is a rough indication. The dates of the assets are mor
   * Inspiration for this [cheat-sheet](/GroundForge/images/matrix-template.png).  
   Both reduced the burden of complex GUIs with file IO and parsing complex data structures.
 * **2017**:
-  * Discovery of Jo Edkins' [index](http://www.theedkins.co.uk/jo/lace/whiting/index.htm)
+  * Discovery of Jo Edkins' [index](https://www.theedkins.co.uk/jo/lace/whiting/index.htm)
     on an out-of-copyright book, the [sampler](https://www.metmuseum.org/perspectives/gertrude-whiting-bobbin-lace-sampler)
     by Gertrude Whiting.
   * Request for a guinea pig to review GroundForge.

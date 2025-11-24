@@ -52,12 +52,13 @@ jobs:
 
       - name: Collect URLs from extracted HTML pages
         run: |
-          python extract-links.py ${{ matrix.repo }} > collected-urls.txt
+          python extract-links.py ${{ matrix.repo }} > urls-with-anchors.txt
         shell: bash
 
       - name: Show collected urls
-        run: cat collected-urls.txt
+        run: cat urls-with-anchors.txt
 
       - name: Show problematic URLs
         run: |
+          cat urls-with-anchor.txt | cut -d ' ' -f1 | sort | uniq > collected-urls.txt
           xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' < collected-urls.txt | egrep -v '(301  |302  |200  )'
