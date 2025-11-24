@@ -56,9 +56,12 @@ jobs:
         shell: bash
 
       - name: Show collected urls
-        run: cat urls-with-anchors.txt
+        run: |
+          pwd
+          cat urls-with-anchors.txt
 
       - name: Show problematic URLs
         run: |
+          pwd
           cat urls-with-anchor.txt | cut -d ' ' -f1 | sort | uniq > collected-urls.txt
           xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' < collected-urls.txt | egrep -v '(301  |302  |200  )'
