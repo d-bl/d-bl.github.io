@@ -38,8 +38,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Untar downloaded artifact of ${{ matrix.repo }}
-        run: |
-          tar -xf artifact.tar
+        run: tar -xf artifact.tar
 
       - name: List extracted files of ${{ matrix.repo }}
         run: |
@@ -47,11 +46,13 @@ jobs:
           ls -R ../..
 
       - name: Get extract-links.py
-        run: |
-          wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/.github/workflows/extract-links.py
+        run: wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/.github/workflows/extract-links.py
+        continue-on-error: false
+
+      - name: Install Python dependencies
+        run: pip install beautifulsoup4 requests
         continue-on-error: false
 
       - name: Collect and check URLs from extracted HTML pages
-        run: |
-          python extract-links.py ${{ matrix.repo }}
+        run: python extract-links.py ${{ matrix.repo }}
         shell: bash
