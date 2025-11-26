@@ -1,8 +1,9 @@
 # used in workflow after download of github-pages artifact
 import os
 import sys
-from html.parser import HTMLParser
+import time
 import requests
+from html.parser import HTMLParser
 from bs4 import BeautifulSoup
 
 if len(sys.argv) < 2:
@@ -25,6 +26,8 @@ class URLExtractor(HTMLParser):
                 found_url = value.split('?')[0].split("#")[0].split("'")[0].rstrip('/')
                 if found_url.endswith('/.'):
                     found_url = found_url[:-2]
+                if found_url.lower().endswith('.html'):
+                    found_url = found_url[:-5]
                 if found_url.startswith('/'):
                     found_url = 'https://d-bl.github.io' + found_url
                 elif not (found_url.startswith('http://') or found_url.startswith('https://')):
@@ -48,7 +51,7 @@ for root, _, files in os.walk('.'):
 with open('collected-urls.txt', 'w', encoding='utf-8') as out:
     for url, anchors in sorted(anchor_urls.items()):
         if anchors:
-            print(f"{url} {' #' + ' #'.join(sorted(anchors))}")
+            print(f"{url} #{' #'.join(sorted(anchors))}")
         else:
             print(f"{url}")
 
@@ -59,6 +62,7 @@ for url, anchors in sorted(anchor_urls.items()):
         exists = response.status_code in (200, 301, 302)
         if not exists:
             print(f"{response.status_code} {url}")
+        time.sleep(1.0) # be polite with server
 
 
 print ("\nMissing anchors:\n")
@@ -72,3 +76,4 @@ for url, anchors in sorted(anchor_urls.items()):
             for anchor in anchors:
                 if not (soup.find(id=anchor) or soup.find(attrs={'name': anchor})):
                     print(f"{url}#{anchor}")
+        time.sleep(1.0) # be polite with server
