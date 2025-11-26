@@ -6,7 +6,7 @@ on:
 jobs:
   check-links:
     runs-on: ubuntu-latest
-    continue-on-error: true # in case an artifact is not available
+    continue-on-error: true # in case some artifacts not available
     strategy:
       max-parallel: 1 # prevent cancel of artifact downloads
       matrix:
@@ -18,7 +18,7 @@ jobs:
           - tesselace-to-gf
           - inkscape-bobbinlace
           - polar-grids
-          - gw-lace-to-gf # >350 sleeps, a lot of requests on https://archive.org/details/laceguideformak00whit/page/
+          - gw-lace-to-gf # a lot of requests on https://archive.org/details/laceguideformak00whit/page/
     steps:
       - name: Get latest successful run ID for ${{ matrix.repo }}
         id: get_run_id
@@ -38,7 +38,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Untar downloaded artifact of ${{ matrix.repo }}
-        run: tar -xf artifact.tar
+        run: |
+          tar -xf artifact.tar
 
       - name: List extracted files of ${{ matrix.repo }}
         run: |
@@ -57,13 +58,9 @@ jobs:
 
       - name: Show collected urls
         run: |
-          echo ====
-          pwd
           cat urls-with-anchors.txt
 
       - name: Show problematic URLs
         run: |
-          echo ====
-          pwd
-          cat urls-with-anchor.txt | cut -d ' ' -f1 | sort | uniq > collected-urls.txt
+          cat urls-with-anchors.txt | cut -d ' ' -f1 | sort | uniq > collected-urls.txt
           xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' < collected-urls.txt | egrep -v '(301  |302  |200  )'

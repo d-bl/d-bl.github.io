@@ -43,4 +43,4 @@ for root, _, files in os.walk('.'):
 
 with open('collected-urls.txt', 'w', encoding='utf-8') as out:
     for url, anchors in sorted(anchor_urls.items()):
-        print(f"{url} {' '.join(sorted(anchors))}")
+        print(f"{url} {' #'.join(sorted(anchors))}")
