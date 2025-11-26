@@ -2,6 +2,8 @@
 import os
 import sys
 from html.parser import HTMLParser
+import requests
+from bs4 import BeautifulSoup
 
 if len(sys.argv) < 2:
     print("Usage: python urls.py <repo>")
@@ -20,7 +22,9 @@ class URLExtractor(HTMLParser):
     def handle_starttag(self, tag, attrs):
         for attr, value in attrs:
             if attr.lower() in self.attrs and value and not value.startswith('javascript'):
-                found_url = value.split('?')[0].split("#")[0].split("'")[0].rstrip('/').rstrip('/')
+                found_url = value.split('?')[0].split("#")[0].split("'")[0].rstrip('/')
+                if found_url.endswith('/.'):
+                    found_url = found_url[:-2]
                 if found_url.startswith('/'):
                     found_url = 'https://d-bl.github.io' + found_url
                 elif not (found_url.startswith('http://') or found_url.startswith('https://')):
@@ -43,4 +47,28 @@ for root, _, files in os.walk('.'):
 
 with open('collected-urls.txt', 'w', encoding='utf-8') as out:
     for url, anchors in sorted(anchor_urls.items()):
-        print(f"{url} {' #'.join(sorted(anchors))}")
+        if anchors:
+            print(f"{url} {' #' + ' #'.join(sorted(anchors))}")
+        else:
+            print(f"{url}")
+
+print ("\nProblematic URLs:\n")
+for url, anchors in sorted(anchor_urls.items()):
+    if not anchors:
+        response = requests.head(url, allow_redirects=True, timeout=5)
+        exists = response.status_code in (200, 301, 302)
+        if not exists:
+            print(f"{response.status_code} {url}")
+
+
+print ("\nMissing anchors:\n")
+for url, anchors in sorted(anchor_urls.items()):
+    if anchors:
+        response = requests.get(url, allow_redirects=True)
+        if response.status_code != 200:
+            print(f"{response.status_code} {url}")
+        else:
+            soup = BeautifulSoup(response.text, 'html.parser')
+            for anchor in anchors:
+                if not (soup.find(id=anchor) or soup.find(attrs={'name': anchor})):
+                    print(f"{url}#{anchor}")

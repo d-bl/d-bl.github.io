@@ -51,16 +51,7 @@ jobs:
           wget https://raw.githubusercontent.com/d-bl/d-bl.github.io/refs/heads/master/.github/workflows/extract-links.py
         continue-on-error: false
 
-      - name: Collect URLs from extracted HTML pages
+      - name: Collect and check URLs from extracted HTML pages
         run: |
-          python extract-links.py ${{ matrix.repo }} > urls-with-anchors.txt
+          python extract-links.py ${{ matrix.repo }}
         shell: bash
-
-      - name: Show collected urls
-        run: |
-          cat urls-with-anchors.txt
-
-      - name: Show problematic URLs
-        run: |
-          cat urls-with-anchors.txt | cut -d ' ' -f1 | sort | uniq > collected-urls.txt
-          xargs -I {} bash -c 'curl -s -o /dev/null -w "%{http_code}" "{}" ; echo " " {} ; sleep 1' < collected-urls.txt | egrep -v '(301  |302  |200  )'
